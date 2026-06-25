@@ -1,0 +1,77 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px 16px;
+  gap: 24px;
+}
+
+.app-header {
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b9d, #a8edea, #fed6e3);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: color-shift 4s ease infinite;
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  margin-top: 6px;
+}
+
+.cat-section {
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+  transition: transform 0.15s ease;
+}
+
+.cat-section:hover { transform: scale(1.02); }
+.cat-section:active { transform: scale(0.98); }
+
+.cat-section:focus-visible {
+  outline: 3px solid #a8edea;
+  outline-offset: 8px;
+  border-radius: 50%;
+}
+
+.controls-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-footer {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.8rem;
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(255,107,157,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(168,237,234,0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 480px) {
+  .app { gap: 16px; padding: 16px 12px; }
+}
+
+@media (min-width: 768px) {
+  .app { gap: 32px; }
+}
